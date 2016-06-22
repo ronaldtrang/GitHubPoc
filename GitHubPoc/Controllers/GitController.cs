@@ -11,7 +11,7 @@ namespace GitHubPoc.Controllers
         // GET: Git
         public ActionResult Index()
         {
-            return View();
+            return View(); 
         }
     }
 }
