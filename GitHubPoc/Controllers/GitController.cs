@@ -21,6 +21,7 @@ namespace GitHubPoc.Controllers
 
         public ActionResult ViewCommit()
         {
+            // Commit branch2 #1
             return View();
         }
     }
