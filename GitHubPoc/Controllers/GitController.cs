@@ -9,9 +9,19 @@ namespace GitHubPoc.Controllers
     public class GitController : Controller
     {
         // GET: Git
-        public ActionResult Index()
+        public ActionResult GetPullRequest()
         {
             return View(); 
+        }
+
+        public ActionResult ViewPullRequest()
+        {
+            return View();
+        }
+
+        public ActionResult ViewCommit()
+        {
+            return View();
         }
     }
 }

@@ -10,7 +10,8 @@ namespace GitHubPoc
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/MyScripts.js"));
+                        "~/Scripts/mustache.js",
+                        "~/Scripts/app/Helper.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

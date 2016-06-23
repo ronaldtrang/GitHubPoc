@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Pull Request";
+}
+
+<h2>Pull Request</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Commits</th>
+        </tr>
+    </thead>
+    <tbody id="commitTableBody">
+
+    </tbody>
+</table>
+
+<script type="text/template" id="commitTemplate">
+    <tr>
+        <td><a href="{{Link}}">{{Commit}}</a></td>
+    </tr>
+</script>

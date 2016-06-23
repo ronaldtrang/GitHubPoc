@@ -1,6 +1,6 @@
-﻿function AuthenticateUser(username, password) {
+﻿function AuthenticateUser(username, password, callback) {
     $.ajax({
-        type: "GET",
+        method: "GET",
         url: "https://api.github.com/user",
         dataType: 'json',
         async: false,
@@ -9,7 +9,7 @@
         },
     })
     .done(function (result) {
-        alert("success");
+        callback.call(this, result);
     })
     .fail(function (error) {
         alert("fail");
@@ -20,5 +20,8 @@ $(document).on("click", "#btnAuthenticate", function () {
     var username = $("#txtUsername").val();
     var password = $("#txtPassword").val();
 
-    AuthenticateUser(username, password);
+    AuthenticateUser(username, password, function (result) {
+        localStorage.setItem('username', username);
+        window.location.href = "/Git/GetPullRequest";
+    });
 })

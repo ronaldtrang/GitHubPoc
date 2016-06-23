@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Pull Requests";
+}
+
+<h2>Pull Request</h2>
+
+<input type="text" id="txtRepository" /><button id="btnRepository">Get Pull Request</button>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>            
+            <th>Title</th>
+            <th>User</th>
+            <th>Date</th>      
+        </tr>
+    </thead>
+    <tbody id="pullRequestTableBody">
+
+    </tbody>
+</table>
+
+<script type="text/template" id="pullRequestTemplate">
+    <tr>     
+        <td><a href="/Git/ViewPullRequest?number={{Number}}">{{Title}}</a></td>
+        <td>{{User}}</td>
+        <td>{{Date}}</td>
+    </tr>
+</script>
+
