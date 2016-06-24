@@ -1,19 +1,26 @@
 ﻿var usernameStorage = localStorage.getItem('username');
 var repositoryStorage = localStorage.getItem('repository');
+var numberStorage = localStorage.getItem('number');
+var commitStorage = localStorage.getItem('commit');
 
-function GetPullRequest(username, repository, number, callback) {
-    var number = number || "";
-
-    if (number != "") {
-        number = "/" + number;
+function formatRoute(input) {
+    if (input != "") {
+        return "/" + input;
     } else {
-        number = "";
+        return "";
     }
+}
 
-    debugger;
+function GetPullRequest(username, repository, number, commit, callback) {
+    var number = number || "";
+    var commit = commit || "";
+
+    number = formatRoute(number);
+    commit = formatRoute(commit);
+
     $.ajax({
         method: "GET",
-        url: "https://api.github.com/repos/" + username + "/" + repository + "/pulls" + number
+        url: "https://api.github.com/repos/" + username + "/" + repository + "/pulls" + number + commit
     })
     .done(function (result) {
         callback.call(this, result);
