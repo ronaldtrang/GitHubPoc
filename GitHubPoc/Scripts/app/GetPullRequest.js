@@ -21,8 +21,18 @@
 
 $(document).on("click", "#btnRepository", function () {
     var repository = $("#txtRepository").val();
+
     localStorage.setItem('repository', repository);
-    GetPullRequest(usernameStorage, repository, "", function (result) {
+
+    GetPullRequest(usernameStorage, repository, "", "", function (result) {
         DisplayPullRequest(result);
     });
+})
+
+$(document).on("click", ".commit-link", function (e) {
+    $target = $(e.target);
+
+    var number = $target.data('number');
+
+    localStorage.setItem('number', number)
 })

@@ -10,6 +10,9 @@ namespace GitHubPoc.Controllers
     {
         public ActionResult Index()
         {
+            // CHANGE1
+            // CHANGE2
+            // CHANGE3
             ViewBag.Title = "Home Page";
 
             return View();

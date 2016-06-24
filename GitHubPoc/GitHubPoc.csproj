@@ -261,6 +261,7 @@
     <Content Include="Scripts\app\GetPullRequest.js" />
     <Content Include="Scripts\app\Helper.js" />
     <Content Include="Scripts\app\Index.js" />
+    <Content Include="Scripts\app\ViewCommit.js" />
     <Content Include="Scripts\app\ViewPullRequest.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -3,20 +3,30 @@
 var number = queryString.number;
 
 function DisplayCommits(input) {
-    debugger;
+    for (var i = 0; i < input.length; i++) {
+        var Commit = input[i];
 
-    var CommitViewObject = {
-        Link: input.commits_url,
-        Commit: input.head.sha
+        var CommitViewObject = {
+            Link: "",
+            Commit: Commit.sha
+        }
+
+        var template = $("#commitTemplate").text();
+
+        var output = Mustache.render(template, CommitViewObject);
+
+        $(output).insertAfter("#commitTableBody");
     }
-
-    var template = $("#commitTemplate").text();
-
-    var output = Mustache.render(template, CommitViewObject);
-
-    $(output).insertAfter("#commitTableBody");
 }
-debugger;
-GetPullRequest(usernameStorage, repositoryStorage, number, function (result) {
+
+GetPullRequest(usernameStorage, repositoryStorage, number, "commits", function (result) {
     DisplayCommits(result);
+})
+
+$(document).on("click", ".commit-link", function (e) {
+    $target = $(e.target);
+
+    var commit = $target.data('commit');
+
+    localStorage.setItem('commit', commit);
 })
